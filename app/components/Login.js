@@ -42,6 +42,7 @@ class Login extends Component {
 
   handleFbSignIn = () => {
     console.log("Fb Sign In!");
+    // Linking.openURL("http://localhost:4000/facebook_sessions");
   }
 
   render() {
