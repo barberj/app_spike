@@ -1,3 +1,9 @@
-import { FontAwesomeApp } from "./app/index";
+import React from "react";
 
-export default FontAwesomeApp;
+import { FontAwesomeApp, ReduxApp } from "./app/index";
+
+export default () => (
+  <FontAwesomeApp>
+    <ReduxApp />
+  </FontAwesomeApp>
+);

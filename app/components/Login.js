@@ -52,7 +52,7 @@ class Login extends Component {
         <KeyboardAvoidingView>
           <Logo />
           <PlainTextInput
-            autoCapitalize={false}
+            autoCapitalize="none"
             placeholder="Email"
             value={this.state.email}
             placeholderTextColor="#000"

@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Component } from "react";
 import { Font } from "expo";
-
-import ReduxApp from "./ReduxApp";
 
 export default class FontAwesomeApp extends Component {
   constructor(props) {
@@ -21,8 +20,12 @@ export default class FontAwesomeApp extends Component {
 
   render() {
     if (this.state.fontLoaded) {
-      return <ReduxApp />;
+      return this.props.children;
     }
     return null;
   }
 }
+
+FontAwesomeApp.propTypes = {
+  children: PropTypes.element.isRequired,
+};
