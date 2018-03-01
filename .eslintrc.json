@@ -3,7 +3,7 @@
     "env": {
         "jest": true,
         "es6": true,
-        "browser": true,
+        "browser": true
     },
     "rules": {
       "react/jsx-filename-extension": [
