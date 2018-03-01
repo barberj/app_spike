@@ -51,12 +51,15 @@ class Login extends Component {
         <KeyboardAvoidingView>
           <Logo />
           <PlainTextInput
+            autoCapitalize={false}
             placeholder="Email"
             value={this.state.email}
+            placeholderTextColor="#000"
             onChangeText={this.handleEmail}
           />
           <PlainTextInput
             placeholder="Password"
+            placeholderTextColor="#000"
             secureTextEntry
             value={this.state.password}
             onChangeText={this.handlePassword}
