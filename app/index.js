@@ -1,7 +1,7 @@
-import FontLessApp from "./FontLessApp";
+import ReduxApp from "./ReduxApp";
 import FontAwesomeApp from "./FontAwesomeApp";
 
 export {
-  FontLessApp,
+  ReduxApp,
   FontAwesomeApp,
 };

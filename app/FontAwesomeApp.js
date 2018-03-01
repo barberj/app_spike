@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Font } from "expo";
 
-import FontLessApp from "./FontLessApp";
+import ReduxApp from "./ReduxApp";
 
 export default class FontAwesomeApp extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ export default class FontAwesomeApp extends Component {
 
   render() {
     if (this.state.fontLoaded) {
-      return <FontLessApp />;
+      return <ReduxApp />;
     }
     return null;
   }
