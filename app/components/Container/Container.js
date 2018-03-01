@@ -13,7 +13,7 @@ const Container = ({ children }) => (
 );
 
 Container.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 export default Container;

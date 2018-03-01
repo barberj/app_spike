@@ -11,7 +11,7 @@ const AvoidingKeyboardView = props => (
 );
 
 AvoidingKeyboardView.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 export default AvoidingKeyboardView;
