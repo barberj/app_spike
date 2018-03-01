@@ -1,3 +1,3 @@
-import { FontLessApp } from "./app/index";
+import { FontAwesomeApp } from "./app/index";
 
-export default FontLessApp;
+export default FontAwesomeApp;
