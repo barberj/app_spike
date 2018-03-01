@@ -12,6 +12,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  faText: {
+    alignItems: "center",
+    fontFamily: "awesome",
+    fontSize: 25,
+    justifyContent: "center",
+  },
 });
 
 export default () => (
@@ -19,5 +25,6 @@ export default () => (
     <Text>Open up App.js to start working on your app!</Text>
     <Text>Changes you make will automatically reload.</Text>
     <Text>Shake your phone to open the developer menu.</Text>
+    <Text style={styles.faText}>&#xf0c0;</Text>
   </View>
 );
