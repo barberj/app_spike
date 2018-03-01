@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { StatusBar } from "react-native";
 
 import { connect } from "react-redux";
 import { connectAlert } from "./Alert";
@@ -46,6 +47,7 @@ class Login extends Component {
   render() {
     return (
       <Container>
+        <StatusBar />
         <KeyboardAvoidingView>
           <Logo />
           <PlainTextInput

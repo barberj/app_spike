@@ -1,13 +1,11 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { StatusBar } from "react-native";
 
 import EStyleSheet from "react-native-extended-stylesheet";
 
 import store from "./store";
 
 import { AlertProvider } from "./components/Alert";
-import Container from "./components/Container";
 import Login from "./components/Login";
 
 EStyleSheet.build({
@@ -21,10 +19,7 @@ EStyleSheet.build({
 export default () => (
   <Provider store={store}>
     <AlertProvider>
-      <Container>
-        <StatusBar />
-        <Login />
-      </Container>
+      <Login />
     </AlertProvider>
   </Provider>
 );

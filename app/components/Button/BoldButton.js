@@ -30,7 +30,7 @@ BoldButton.propTypes = {
   children: PropTypes.element.isRequired,
   onPress: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  style: PropTypes.number, // eslint-disable-line react/forbid-prop-types
 };
 
 BoldButton.defaultProps = {
