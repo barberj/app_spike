@@ -11,6 +11,7 @@ import { FacebookButton, SignInButton } from "./Button";
 import KeyboardAvoidingView from "./KeyboardAvoidingView";
 import Logo from "./Logo";
 import { OrSeparator } from "./Separator";
+import api from "../services/webRequest";
 
 class Login extends Component {
   constructor(props) {
@@ -35,8 +36,15 @@ class Login extends Component {
     this.setState({ password: null });
   }
 
-  handleSignIn = () => {
-    console.log("Email Sign In!");
+  handleSignIn = async () => {
+    const { email, password } = this.state;
+
+    await api({ path: "sessions", method: "post", body: { email, password } })
+      .then(({ session }) => {
+        console.log("Authorized", session);
+      })
+      .catch(console.error);
+
     // this.props.dispatch(authorize(this.state.email, this.state.password, this.handleError));
   }
 
