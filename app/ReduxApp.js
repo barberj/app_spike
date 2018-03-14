@@ -1,5 +1,7 @@
 import React from "react";
-import { Provider } from "react-redux";
+import PropTypes from "prop-types";
+import { Provider, connect } from "react-redux";
+import { WebView } from "react-native";
 
 import EStyleSheet from "react-native-extended-stylesheet";
 
@@ -16,10 +18,39 @@ EStyleSheet.build({
   $outline: 1,
 });
 
+const WebViewWrapper = () => (
+  <WebView
+    source={{
+      uri: "http://localhost:8080/",
+    }}
+    style={{ marginTop: 20 }}
+  />
+);
+
+const ReduxApp = (props) => {
+  const { isLoggedIn } = props;
+
+  return (
+    <AlertProvider>
+      { !isLoggedIn ? <Login /> : <WebViewWrapper /> }
+    </AlertProvider>
+  );
+};
+
+const mapStateToProps = state => (
+  {
+    isLoggedIn: state.isLoggedIn,
+  }
+);
+
+ReduxApp.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+};
+
+const ConnectedReduxApp = connect(mapStateToProps)(ReduxApp);
+
 export default () => (
   <Provider store={store}>
-    <AlertProvider>
-      <Login />
-    </AlertProvider>
+    <ConnectedReduxApp />
   </Provider>
 );

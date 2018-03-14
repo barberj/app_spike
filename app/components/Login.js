@@ -12,6 +12,7 @@ import KeyboardAvoidingView from "./KeyboardAvoidingView";
 import Logo from "./Logo";
 import { OrSeparator } from "./Separator";
 import api from "../services/webRequest";
+import setSession from "../actions";
 
 class Login extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class Login extends Component {
 
     await api({ path: "sessions", method: "post", body: { email, password } })
       .then(({ session }) => {
-        console.log("Authorized", session);
+        this.props.setSession(session);
       })
       .catch(console.error);
 
@@ -85,8 +86,23 @@ class Login extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => (
+  {
+    setSession: (session) => {
+      dispatch(setSession(session));
+    },
+  }
+);
+
+const mapStateToProps = state => (
+  {
+    isLoggedIn: state.isLoggedIn,
+  }
+);
+
 Login.propTypes = {
   alertWithType: PropTypes.func.isRequired,
+  setSession: PropTypes.func.isRequired,
 };
 
-export default connect()(connectAlert(Login));
+export default connect(mapStateToProps, mapDispatchToProps)(connectAlert(Login));
